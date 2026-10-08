@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dm-converter"
+version = "0.1.0"
+description = "QGIS不要の純Python DM(数値地形図データ)->GeoJSON変換パッケージ"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "GPL-2.0-or-later" }
+authors = [{ name = "dm-converter contributors" }]
+keywords = ["DM", "GIS", "GeoJSON", "Japan", "mesh", "JGD2011"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+dependencies = [
+    "shapely>=2.0",
+    "pyproj>=3.0",
+    "click>=8.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/MIERUNE/dmconverter"
+
+[project.scripts]
+dm-convert = "dm_converter.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+include = ["dm_converter*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
