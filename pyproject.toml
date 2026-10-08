@@ -3,7 +3,7 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "dm-converter"
+name = "japan-dm2geojson"
 version = "0.1.0"
 description = "QGIS不要の純Python DM(数値地形図データ)->GeoJSON変換パッケージ"
 readme = "README.md"
@@ -23,7 +23,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/MIERUNE/dmconverter"
+Homepage = "https://github.com/kasi-x/japan-dm2geojson"
 
 [project.scripts]
 dm-convert = "dm_converter.cli:main"

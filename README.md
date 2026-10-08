@@ -1,10 +1,22 @@
-# dm-converter
+# japan-dm2geojson
 
 QGIS不要の純Pythonパッケージ。公共測量の数値地形図データ（DM）をGeoJSONに変換する。
-MIERUNE製QGISプラグイン [dmconverter](https://github.com/MIERUNE/dmconverter) の
-パーサー核を移植し、QGIS依存（PyQGIS）をshapely＋pyprojに置き換えた。
-地域メッシュ生成は [qgis-japan-mesh](https://github.com/MIERUNE/qgis-japan-mesh)
-の純Pythonロジックを統合している。
+
+## 由来
+
+本パッケージは、QGISプラグインとして公開されている以下の2件を、
+QGISなしで使えるスタンドアロンなPythonパッケージとして再構成したものです。
+核となるパース・メッシュ生成ロジックは両プラグインのものを引き継いでいます。
+
+- DM変換: MIERUNE製QGISプラグイン [dmconverter](https://github.com/MIERUNE/dmconverter)
+  （[QGIS公式リポジトリ掲載](https://plugins.qgis.org/plugins/dmconverter/)）の
+  パーサー核を移植し、QGIS依存（PyQGIS）をshapely＋pyprojに置き換えた。
+- 地域メッシュ生成: [qgis-japan-mesh](https://github.com/MIERUNE/qgis-japan-mesh)
+  （[QGIS公式リポジトリ掲載](https://plugins.qgis.org/plugins/japanese_grids/)）の
+  純Pythonロジックを統合している。
+
+QGIS上で使う場合は元のプラグインをそのまま利用するのが適している。
+本パッケージはサーバ・CI・スクリプトなどQGISを入れられない環境向けである。
 
 ## できること
 
@@ -18,14 +30,14 @@ MIERUNE製QGISプラグイン [dmconverter](https://github.com/MIERUNE/dmconvert
 ## インストール
 
 ```bash
-pip install dm-converter
+pip install japan-dm2geojson
 ```
 
 開発版:
 
 ```bash
-git clone <this-repo>
-cd dm_converter_py
+git clone https://github.com/kasi-x/japan-dm2geojson
+cd japan-dm2geojson
 python -m venv .venv && .venv/bin/pip install -e ".[dev]"
 ```
 
